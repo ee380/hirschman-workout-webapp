@@ -332,3 +332,31 @@ function updateProgress() {
 
 // Initialize the interface
 populateDayList();
+
+// Theme toggling logic
+document.addEventListener('DOMContentLoaded', () => {
+  const themeToggleBtn = document.getElementById('theme-toggle');
+  if (!themeToggleBtn) return;
+  // Helper to apply theme and update button icon/aria-label
+  function applyTheme(theme) {
+    if (theme === 'dark') {
+      document.body.classList.add('dark');
+      themeToggleBtn.textContent = '☀️';
+      themeToggleBtn.setAttribute('aria-label', 'Switch to light mode');
+    } else {
+      document.body.classList.remove('dark');
+      themeToggleBtn.textContent = '🌙';
+      themeToggleBtn.setAttribute('aria-label', 'Switch to dark mode');
+    }
+    localStorage.setItem('hirschmanTheme', theme);
+  }
+  // Load saved theme from localStorage or default to light
+  const savedTheme = localStorage.getItem('hirschmanTheme') || 'light';
+  applyTheme(savedTheme);
+  // Listen for toggle button clicks
+  themeToggleBtn.addEventListener('click', () => {
+    const currentTheme = document.body.classList.contains('dark') ? 'dark' : 'light';
+    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+    applyTheme(newTheme);
+  });
+});
