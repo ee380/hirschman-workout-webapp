@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hirschman 30‑Day Workout Plan</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="hero">
+    <!-- Hero image and overlay text -->
+    <img src="background.png" alt="Abstract fitness background" class="hero-image">
+    <div class="hero-overlay">
+      <h1>Hirschman 30‑Day Workout Plan</h1>
+      <p>Commit to thirty days of movement, strength and recovery. Select a day to begin!</p>
+    </div>
+  </header>
+
+  <main>
+    <!-- Progress tracking bar -->
+    <section id="progress-section">
+      <div class="progress-text">
+        Progress: <span id="progress-percent">0%</span>
+      </div>
+      <div class="progress-bar">
+        <div id="progress-fill"></div>
+      </div>
+    </section>
+
+    <!-- Main content area splits day list and details -->
+    <section id="workout-planner">
+      <aside id="day-list">
+        <h2 class="sidebar-title">Days</h2>
+        <ul id="days"></ul>
+      </aside>
+      <article id="day-details">
+        <h2 id="day-title">Select a day</h2>
+        <div id="workout-details"></div>
+        <button id="complete-btn" class="complete-button" style="display:none;">Mark as Complete</button>
+      </article>
+    </section>
+  </main>
+
+  <footer>
+    <p>Stay consistent, listen to your body and enjoy the journey!</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
